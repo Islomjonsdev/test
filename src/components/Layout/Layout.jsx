@@ -6,7 +6,9 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="px-[15px]">
+        <Outlet />
+      </div>
     </div>
   );
 };
