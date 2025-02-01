@@ -1,20 +1,44 @@
 import { Button } from "@/components/ui/button";
+import Modal from "@/components/ui/Modal/Modal";
 import { LogInIcon } from "lucide-react";
 import React from "react";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
 const Header = () => {
+  const [addComanyModal, setAddComanyModal] = useState(false);
   return (
-    <header className="bg-[#313131] h-[65px] flex items-center px-[15px]">
-      <div className="flex items-center justify-between w-full">
-        <h1 className="text-white font-bold text-[14px] leading-[22px]">
-          Компании
-        </h1>
-        <div className="flex items-center gap-[19px]">
-          <LogInIcon className="text-white" />
-          <Button variant="addCompany">Добавить компания</Button>
+    <>
+      <header className="bg-[#313131] h-[65px] flex items-center px-[15px]">
+        <div className="flex items-center justify-between w-full">
+          <h1 className="text-white font-bold text-[14px] leading-[22px]">
+            Компании
+          </h1>
+          <div className="flex items-center gap-[19px]">
+            <LogInIcon className="text-white" />
+            <Button
+              variant="addCompany"
+              onClick={() => setAddComanyModal(true)}
+            >
+              Добавить компания
+            </Button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {addComanyModal && (
+        <Modal close={setAddComanyModal}>
+          <div className="bg-white w-[572px]">
+            <div className="flex items-center justify-between bg-[#F0F0F0] px-[24px] py-[16px] border-b border-[#F0F0F0]">
+              <h3 className="text-[#000000D9] font-bold text-[20px] leading-[28px]">Добавить компания</h3>
+              <IoMdClose className="w-4 h-4" onClick={() => setAddComanyModal(false)} />
+            </div>
+            <div className="px-[16px]">
+                salom
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };
 
