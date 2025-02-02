@@ -10,7 +10,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        addCompany: "bg-[#08979C] py-[4px] px-[15px] text-white font-normal text-[17px] text-center leading-[22px]",
+        addCompany: "bg-[#08979C] py-[4px] px-[15px] text-white font-normal text-[14px] text-center leading-[22px]",
+        addCompanyForm: "bg-[#1890FF] py-[5px] px-[16px] text-white font-normal text-[14px] text-center leading-[22px]",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:

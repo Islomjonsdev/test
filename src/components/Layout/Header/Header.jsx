@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Modal from "@/components/ui/Modal/Modal";
 import { LogInIcon } from "lucide-react";
 import React from "react";
@@ -29,12 +30,20 @@ const Header = () => {
         <Modal close={setAddComanyModal}>
           <div className="bg-white w-[572px]">
             <div className="flex items-center justify-between bg-[#F0F0F0] px-[24px] py-[16px] border-b border-[#F0F0F0]">
-              <h3 className="text-[#000000D9] font-bold text-[20px] leading-[28px]">Добавить компания</h3>
-              <IoMdClose className="w-4 h-4" onClick={() => setAddComanyModal(false)} />
+              <h3 className="text-[#000000D9] font-bold text-[20px] leading-[28px]">
+                Добавить компания
+              </h3>
+              <IoMdClose
+                className="w-4 h-4 cursor-pointer"
+                onClick={() => setAddComanyModal(false)}
+              />
             </div>
-            <div className="px-[16px]">
-                salom
-            </div>
+             <div className="pt-[24px] pb-[36px] px-[24px]">
+                form
+             </div>
+              <div className="flex items-center justify-center bg-[#F0F0F0] py-[10px] border-b border-[#F0F0F0]">
+                  <Button variant="addCompanyForm">Добавить компания</Button>
+              </div>
           </div>
         </Modal>
       )}
