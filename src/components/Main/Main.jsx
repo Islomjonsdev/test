@@ -5,12 +5,13 @@ import { LogInIcon } from "lucide-react";
 import React from "react";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import MainBody from "./MainBody/MainBody";
 
 const Header = () => {
   const [addComanyModal, setAddComanyModal] = useState(false);
   return (
     <>
-      <div className="bg-[#313131] h-[65px] flex items-center px-[15px]">
+      <div className="bg-[#313131] h-[65px] flex items-center  px-[15px]">
         <div className="flex items-center justify-between w-full">
           <h1 className="text-white font-bold text-[14px] leading-[22px]">
             Компании
@@ -26,7 +27,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
+      <MainBody />
+
       {addComanyModal && (
         <Modal close={setAddComanyModal}>
           <div className="bg-white w-[572px]">
