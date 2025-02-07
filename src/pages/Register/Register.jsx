@@ -15,7 +15,7 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setError(""); 
+    setError("");
     const data = {
       fullName: fullName,
       login: login,
@@ -26,12 +26,14 @@ const Register = () => {
     try {
       const res = await instance.post("auths/sign-up", data, {
         headers: { "Content-Type": "application/json" },
+        responseType: "json",
       });
+      console.log(res);
       console.log(res?.data);
       setFullName("");
       setLogin("");
       setPassword("");
-      navigate("/login")
+      navigate("/login");
     } catch (err) {
       console.error("Registration failed:", err);
       setError(err.response?.data?.message || "Registration failed!");
@@ -39,7 +41,7 @@ const Register = () => {
   };
   return (
     <div className="register flex items-center justify-center">
-      <div className="bg-[#fff] max-w-[462px] w-full">
+      <div className="bg-[#fff] max-w-[462px] w-full rounded-[2px]">
         <h1 className="pt-6 pl-6 text-[36px] text-black font-bold leading-[22px] mb-[21px]">
           Регистрация
         </h1>
