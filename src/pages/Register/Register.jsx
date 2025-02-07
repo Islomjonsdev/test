@@ -24,12 +24,11 @@ const Register = () => {
     console.log(data);
 
     try {
-      const res = await instance.post("auths/sign-up", data, {
-        headers: { "Content-Type": "application/json" },
-        responseType: "json",
+      const res = await instance.post("/auths/sign-up", data, {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       });
-      console.log(res);
-      console.log(res?.data);
+      console.log(res?.data);   
       setFullName("");
       setLogin("");
       setPassword("");
