@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { instance } from "@/api";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { LOGIN_ADMIN } from "@/redux/actions/login";
 
@@ -25,17 +25,16 @@ const Login = () => {
     instance
       .post("/auths/sign-in", data)
       .then((res) => {
-        // if (res.data.token) {
-          navigate("/");
-          dispatch({ type: LOGIN_ADMIN, payload: res.data });
-          setAdminLogin("");
-          setAdminPassword("");
-          toast.success("Welcome")
-        // }
+        console.log(res?.data);
+        navigate("/");
+        dispatch({ type: LOGIN_ADMIN, payload: res.data });
+        setAdminLogin("");
+        setAdminPassword("");
+        toast.success("Welcome");
       })
       .catch((err) => {
         console.log(err);
-        toast.error("Error")
+        toast.error("Error");
       });
   };
   return (
