@@ -5,10 +5,16 @@ import { LogInIcon } from "lucide-react";
 import React from "react";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import MainBody from "./MainBody/MainBody";
 
 const Header = () => {
   const [addComanyModal, setAddComanyModal] = useState(false);
+  const navigate = useNavigate()
+  const handleLogut = () => {
+    localStorage.removeItem("usertoken");
+    navigate("/login")
+  }
   return (
     <>
       <div className="bg-[#313131] h-[65px] flex items-center  px-[15px]">
@@ -17,7 +23,9 @@ const Header = () => {
             Компании
           </h1>
           <div className="flex items-center gap-[19px]">
-            <LogInIcon className="text-white" />
+            <div className="cursor-pointer" onClick={handleLogut}>
+              <LogInIcon className="text-white" />
+            </div>
             <Button
               variant="addCompany"
               onClick={() => setAddComanyModal(true)}
