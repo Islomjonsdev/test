@@ -26,9 +26,9 @@ const Register = () => {
     try {
       const res = await instance.post("/auths/sign-up", data, {
         "Content-Type": "application/json",
-        "Accept": "application/json"
+        Accept: "application/json",
       });
-      console.log(res?.data);   
+      console.log(res?.data);
       setFullName("");
       setLogin("");
       setPassword("");
@@ -44,46 +44,48 @@ const Register = () => {
         <h1 className="pt-6 pl-6 text-[36px] text-black font-bold leading-[22px] mb-[21px]">
           Регистрация
         </h1>
-        <form className="pr-[42px] pl-6" onSubmit={handleRegister}>
-          <div className="mb-[21px]">
-            <label className="text-black font-normal text-[14px] leading-[22px]">
-              Ф.И.О
-            </label>
-            <Input
-              authFormInput
-              type="text"
-              placeholder="Введите Ф.И.О"
-              onChange={(e) => setFullName(e.target.value)}
-            />
+        <form onSubmit={handleRegister}>
+          <div className="pr-[42px] pl-6">
+            <div className="mb-[21px]">
+              <label className="text-black font-normal text-[14px] leading-[22px]">
+                Ф.И.О
+              </label>
+              <Input
+                authFormInput
+                type="text"
+                placeholder="Введите Ф.И.О"
+                onChange={(e) => setFullName(e.target.value)}
+              />
+            </div>
+            <div className="mb-[21px]">
+              <label className="text-black font-normal text-[14px] leading-[22px]">
+                Логин
+              </label>
+              <Input
+                authFormInput
+                type="email"
+                placeholder="Введите логин"
+                onChange={(e) => setLogin(e.target.value)}
+              />
+            </div>
+            <div className="mb-[21px]">
+              <label className="text-black font-normal text-[14px] leading-[22px]">
+                Пароль
+              </label>
+              <Input
+                authFormInput
+                type="password"
+                placeholder="Введите пароль"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <Link
+              className="font-normal text-[#1890FF] text-[14px] leading-[22px]"
+              to={"/login"}
+            >
+              Вход
+            </Link>
           </div>
-          <div className="mb-[21px]">
-            <label className="text-black font-normal text-[14px] leading-[22px]">
-              Логин
-            </label>
-            <Input
-              authFormInput
-              type="email"
-              placeholder="Введите логин"
-              onChange={(e) => setLogin(e.target.value)}
-            />
-          </div>
-          <div className="mb-[21px]">
-            <label className="text-black font-normal text-[14px] leading-[22px]">
-              Пароль
-            </label>
-            <Input
-              authFormInput
-              type="password"
-              placeholder="Введите пароль"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <Link
-            className="font-normal text-[#1890FF] text-[14px] leading-[22px]"
-            to={"/login"}
-          >
-            Вход
-          </Link>
           <div className="mt-4 flex items-center justify-center py-[10px] border-t border-[#F0F0F0]">
             <Button type="submit" variant="authBtn">
               Регистрировать
