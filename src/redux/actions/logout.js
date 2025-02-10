@@ -1,2 +1,0 @@
-const LOGOUT_ADMIN = "LOGOUT_ADMIN";
-export { LOGOUT_ADMIN }
