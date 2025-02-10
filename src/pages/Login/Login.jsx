@@ -25,7 +25,6 @@ const Login = () => {
     instance
       .post("/auths/sign-in", data)
       .then((res) => {
-        console.log(res?.data);
         navigate("/");
         dispatch({ type: LOGIN_ADMIN, payload: res.data });
         setAdminLogin("");
