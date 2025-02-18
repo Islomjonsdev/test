@@ -20,7 +20,7 @@ const MainBody = () => {
         console.log(err);
       });
   }, []);
-  return <div className="px-[15px]">MainBody</div>;
+  return <div>MainBody</div>;
 };
 
 export default MainBody;
